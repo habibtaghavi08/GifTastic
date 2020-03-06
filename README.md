@@ -1,0 +1,2 @@
+# GifTastic
+GIPHY_API
