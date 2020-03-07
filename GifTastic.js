@@ -16,13 +16,14 @@ function display() {
 
         //grabs current text button clicked on page
         var getTextBtn = $(this).text()
-        console.log("https://api.giphy.com/v1/gifs/search?q=" + getTextBtn +  "&api_key=DNSsuC2Sr861ml9NjnXxNjYmyA8iNUva&q=cars&limit=10&offset=0&rating=G&lang=en")
+        console.log("https://api.giphy.com/v1/gifs/search?q=" + getTextBtn +  "&api_key=DNSsuC2Sr861ml9NjnXxNjYmyA8iNUva&q=Cars&limit=10&offset=0&rating=G&lang=en")
         //AJAX is a way to call API
         $.ajax({
-
-            url: "https://api.giphy.com/v1/gifs/search?q=" + getTextBtn + "&api_key=DNSsuC2Sr861ml9NjnXxNjYmyA8iNUva&q=cars&limit=10&offset=0&rating=G&lang=en",
+            url:"https://api.giphy.com/v1/gifs/search?q=" + getTextBtn + "&api_key=DNSsuC2Sr861ml9NjnXxNjYmyA8iNUva&q=Cars&limit=10&offset=0&rating=G&lang=en",
+                // url:"https://api.giphy.com/v1/gifs/search?q=" + getTextBtn + "&api_key=DNSsuC2Sr861ml9NjnXxNjYmyA8iNUva&q=q&limit=10&offset=0&rating=G&lang=en",
+            // url: "https://api.giphy.com/v1/gifs/search?q=" + getTextBtn + "&api_key=DNSsuC2Sr861ml9NjnXxNjYmyA8iNUva&q=cars&limit=10&offset=0&rating=G&lang=en",
             // url: "https://api.giphy.com/v1/gifs/search?q=" + getTextBtn + "&api_key=DNSsuC2Sr861ml9NjnXxNjYmyA8iNUva",
-            method: "GET"
+            method: "GET",
         }).then(function (response) {
             console.log(response)
             // creating a varrible for the rows and colloms dynamiclly using JQuery
