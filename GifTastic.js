@@ -17,14 +17,17 @@ function display() {
     }
     //crerated om click for all image buttons
 
+  
+
     $(".carsBtn").on("click", function () {
 
         //grabs current text button clicked on page
         var getTextBtn = $(this).text()
-        console.log("https://api.giphy.com/v1/gifs/search?q=" + getTextBtn +  "&api_key=DNSsuC2Sr861ml9NjnXxNjYmyA8iNUva&q=Cars&limit=10&offset=0&rating=G&lang=en")
+        console.log(getTextBtn)
+   
         //AJAX is a way to call API
         $.ajax({
-            url:"https://api.giphy.com/v1/gifs/search?q=" + getTextBtn + "&api_key=DNSsuC2Sr861ml9NjnXxNjYmyA8iNUva&q=Cars&limit=10&offset=0&rating=G&lang=en",
+            url:"https://api.giphy.com/v1/gifs/search?q=" + getTextBtn + "&api_key=DNSsuC2Sr861ml9NjnXxNjYmyA8iNUva&limit=10&offset=0&rating=G&lang=en",
                 // url:"https://api.giphy.com/v1/gifs/search?q=" + getTextBtn + "&api_key=DNSsuC2Sr861ml9NjnXxNjYmyA8iNUva&q=q&limit=10&offset=0&rating=G&lang=en",
             // url: "https://api.giphy.com/v1/gifs/search?q=" + getTextBtn + "&api_key=DNSsuC2Sr861ml9NjnXxNjYmyA8iNUva&q=cars&limit=10&offset=0&rating=G&lang=en",
             // url: "https://api.giphy.com/v1/gifs/search?q=" + getTextBtn + "&api_key=DNSsuC2Sr861ml9NjnXxNjYmyA8iNUva",
@@ -46,11 +49,17 @@ function display() {
                 }
 
                 var col = $("<col-sm-3>")
+                 
                 var img = $("<img>")
-                img.attr("src", images[index].images.original.url)
+                img.attr("src", images[index].images.original_still.url)
                 img.attr("style", "width:25%")
+               img.attr("data-state","still")
+               img.attr("data-still",images[index].images.original_still.url)
+               img.attr("data-animate",images[index].images.original.url)
+               img.addClass("imageButton")
                 col.append(img)
-
+               
+                col.append("rating:"+ images[index].rating)
                 row.append(col)
 
                 if (index % 3 === 0) {
@@ -59,9 +68,34 @@ function display() {
 
             }
 
+            $(".imageButton").on("click",function(){
+                  var state=$(this).attr("data-state")
+                 var animate=$(this).attr("data-animate")
+                 var still=$(this).attr("data-still")
+                  if(state==="still"){
+                      $(this).attr("data-state","animate")
+
+                      $(this).attr("src",animate)
+                  }
+                  else{
+                      $(this).attr("data-state","still")
+                      $(this).attr("src",still)
+                  }
+
+            
+            })
+
         })
     })
 }
+
+
+
+$("#addCars").on("click",function(){
+    var newCar=$("#cars").val()
+    buttons.push(newCar)
+    display()
+})
 
 
 // to call the function and means to run the function 
