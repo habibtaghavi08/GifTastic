@@ -1,4 +1,9 @@
-var buttons = ["Bently", "Benz", "BMW", "Porche", "Audi", "Range Rover", "Lambo", "Ferrari", "GT-R"]
+var buttons = ["Bently", "Benz", "BMW", "Porche", "Audi", "Range Rover", "Lambo", "Ferrari", "GT-R", "Toyota Supra",
+"Mclaren", "Rolls Royce", "Lexus LC 500", "Lexus GS-F",
+"Lexus RC-F", "Acura NSX", "Maybach", "Ford GT", "McLaren 720S",
+"Ferrari 488", "Noble M600", "Spyker C8", "Lamborghini Aventador",
+"Mercades AMG GT", "Tesla"]
+
 // created a display function and 4 loop
 function display() {
 
@@ -23,7 +28,7 @@ function display() {
                 // url:"https://api.giphy.com/v1/gifs/search?q=" + getTextBtn + "&api_key=DNSsuC2Sr861ml9NjnXxNjYmyA8iNUva&q=q&limit=10&offset=0&rating=G&lang=en",
             // url: "https://api.giphy.com/v1/gifs/search?q=" + getTextBtn + "&api_key=DNSsuC2Sr861ml9NjnXxNjYmyA8iNUva&q=cars&limit=10&offset=0&rating=G&lang=en",
             // url: "https://api.giphy.com/v1/gifs/search?q=" + getTextBtn + "&api_key=DNSsuC2Sr861ml9NjnXxNjYmyA8iNUva",
-            method: "GET",
+            method: "GET"
         }).then(function (response) {
             console.log(response)
             // creating a varrible for the rows and colloms dynamiclly using JQuery
