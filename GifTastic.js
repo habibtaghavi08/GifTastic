@@ -2,7 +2,7 @@ var buttons = ["Bently", "Benz", "BMW", "Porche", "Audi", "Range Rover", "Lambo"
 "Mclaren", "Rolls Royce", "Lexus LC 500", "Lexus GS-F",
 "Lexus RC-F", "Acura NSX", "Maybach", "Ford GT", "McLaren 720S",
 "Ferrari 488", "Noble M600", "Spyker C8", "Lamborghini Aventador",
-"Mercades AMG GT", "Tesla"]
+"Mercades AMG GT", "Tesla"];
 
 
 
@@ -10,12 +10,12 @@ var buttons = ["Bently", "Benz", "BMW", "Porche", "Audi", "Range Rover", "Lambo"
 function display() {
 
 
-    $(".buttonsDiv").empty()
+    $(".buttonsDiv").empty();
     for (let index = 0; index < buttons.length; index++) {
-        var button = $("<button>")
-        button.text(buttons[index])
-        button.addClass("btn btn-danger btn-lg m-1 carsBtn")
-        $(".buttonsDiv").append(button)
+        var button = $("<button>");
+        button.text(buttons[index]);
+        button.addClass("btn btn-danger btn-lg m-1 carsBtn");
+        $(".buttonsDiv").append(button);
     }
     //crerated om click for all image buttons
 
@@ -24,8 +24,8 @@ function display() {
     $(".carsBtn").on("click", function () {
 
         //grabs current text button clicked on page
-        var getTextBtn = $(this).text()
-        console.log(getTextBtn)
+        var getTextBtn = $(this).text();
+        console.log(getTextBtn);
    
         //AJAX is a way to call API
         $.ajax({
@@ -35,71 +35,71 @@ function display() {
             // url: "https://api.giphy.com/v1/gifs/search?q=" + getTextBtn + "&api_key=DNSsuC2Sr861ml9NjnXxNjYmyA8iNUva",
             method: "GET"
         }).then(function (response) {
-            console.log(response)
+            console.log(response);
             // creating a varrible for the rows and colloms dynamiclly using JQuery
 
-            var images = response.data
+            var images = response.data;
             /// empties out the place holder of the pictures
-            $(".imagesDiv").empty()
-            var row = $("<row>")
+            $(".imagesDiv").empty();
+            var row = $("<row>");
             //creating new row tag at index zero
             for (let index = 0; index < images.length; index++) {
                 //creating row when index is multipul of 3 
-                console.log(index % 3)
+                console.log(index % 3);
                 if (index % 3 === 0) {
-                    var row = $("<row>")
+                     row = $("<row>");
                 }
 
-                var col = $("<col-sm-3>")
+                var col = $("<col-sm-3>");
                  
-                var img = $("<img>")
-                img.attr("src", images[index].images.original_still.url)
-                img.attr("style", "width:25%")
-               img.attr("data-state","still")
-               img.attr("data-still",images[index].images.original_still.url)
-               img.attr("data-animate",images[index].images.original.url)
-               img.addClass("imageButton")
-                col.append(img)
+                var img = $("<img>");
+                img.attr("src", images[index].images.original_still.url);
+                img.attr("style", "width:25%");
+               img.attr("data-state","still");
+               img.attr("data-still",images[index].images.original_still.url);
+               img.attr("data-animate",images[index].images.original.url);
+               img.addClass("imageButton");
+                col.append(img);
                
-                col.append("rating:"+ images[index].rating)
-                row.append(col)
+                col.append("rating:"+ images[index].rating);
+                row.append(col);
 
                 if (index % 3 === 0) {
-                    $(".imagesDiv").append(row)
+                    $(".imagesDiv").append(row);
                 }
 
             }
 
             $(".imageButton").on("click",function(){
-                  var state=$(this).attr("data-state")
-                 var animate=$(this).attr("data-animate")
-                 var still=$(this).attr("data-still")
+                  var state=$(this).attr("data-state");
+                 var animate=$(this).attr("data-animate");
+                 var still=$(this).attr("data-still");
                   if(state==="still"){
-                      $(this).attr("data-state","animate")
+                      $(this).attr("data-state","animate");
 
-                      $(this).attr("src",animate)
+                      $(this).attr("src",animate);
                   }
                   else{
-                      $(this).attr("data-state","still")
-                      $(this).attr("src",still)
+                      $(this).attr("data-state","still");
+                      $(this).attr("src",still);
                   }
 
             
-            })
+            });
 
-        })
-    })
+        });
+    });
 }
 
 
 
 $("#addCars").on("click",function(){
-    var newCar=$("#cars").val()
-    buttons.push(newCar)
-    display()
-})
+    var newCar=$("#cars").val();
+    buttons.push(newCar);
+    display();
+});
 
 
 // to call the function and means to run the function 
 
-display()
+display();

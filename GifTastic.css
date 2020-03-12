@@ -1,3 +1,6 @@
-.image{
+body{
     background-image: url("./bemtlyWhiteBackGround1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: -115px;
 }
