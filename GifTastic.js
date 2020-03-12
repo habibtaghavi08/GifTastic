@@ -4,6 +4,8 @@ var buttons = ["Bently", "Benz", "BMW", "Porche", "Audi", "Range Rover", "Lambo"
 "Ferrari 488", "Noble M600", "Spyker C8", "Lamborghini Aventador",
 "Mercades AMG GT", "Tesla"]
 
+
+
 // created a display function and 4 loop
 function display() {
 
@@ -12,7 +14,7 @@ function display() {
     for (let index = 0; index < buttons.length; index++) {
         var button = $("<button>")
         button.text(buttons[index])
-        button.addClass("carsBtn ml-1")
+        button.addClass("btn btn-danger btn-lg m-1 carsBtn")
         $(".buttonsDiv").append(button)
     }
     //crerated om click for all image buttons
