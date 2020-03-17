@@ -54,14 +54,14 @@ function display() {
                  
                 var img = $("<img>");
                 img.attr("src", images[index].images.original_still.url);
-                img.attr("style", "width:25%");
+                img.attr("style", "width: 25%");
                img.attr("data-state","still");
                img.attr("data-still",images[index].images.original_still.url);
                img.attr("data-animate",images[index].images.original.url);
                img.addClass("imageButton");
                 col.append(img);
                
-                col.append("rating:"+ images[index].rating);
+                col.append("Rating:"+ images[index].rating);
                 row.append(col);
 
                 if (index % 3 === 0) {

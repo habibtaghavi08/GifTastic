@@ -1,6 +1,27 @@
 body{
-    background-image: url("./bemtlyWhiteBackGround1.jpg");
+    /* background-image: url("./bemtlyWhiteBackGround1.jpg"); */
+    background-image: url("./Grey&LimeAMG.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-y: -115px;
+     background-position-y: -100px; 
+}
+
+.imagesDiv{
+    font-family: 'Arial Narrow Bold', sans-serif;
+     color: lime ;
+     font-weight: 600;
+     text-rendering: auto;
+    text-align: center;
+    text-decoration: underline;
+    border-color: limegreen;
+    border-style: solid;
+    /* background-origin: padding-box 100px; */
+    background-color: grey;
+    
+}
+
+.col-sm-3{
+    color: lime;
+    font-size: larger;
+    font-weight: bold;
 }
