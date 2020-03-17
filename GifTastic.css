@@ -15,10 +15,23 @@ body{
     text-decoration: underline;
     border-color: limegreen;
     border-style: solid;
-    /* background-origin: padding-box 100px; */
-    background-color: grey;
-    
+    background-attachment: fixed;
+    background: lightslategrey ;
+
+
 }
+
+
+/* .transbox{
+
+        margin: auto;
+        background-color: #ffffff;
+        border: 1px solid black;
+        opacity: 0;
+      } */
+
+
+
 
 .col-sm-3{
     color: lime;
