@@ -1,27 +1,38 @@
 body{
-    /* background-image: url("./bemtlyWhiteBackGround1.jpg"); */
-    background-image: url("./Grey&LimeAMG.jpg");
+     background-image: url("./Grey&LimeAMG.jpg");
+    /* background-image: url("./collection-of-white-supercars.jpg"); */
     background-size: cover;
     background-repeat: no-repeat;
-     background-position-y: -100px; 
+    background-position-y: -200px; 
 }
 
 .imagesDiv{
     font-family: 'Arial Narrow Bold', sans-serif;
      color: lime ;
      font-weight: 600;
-     text-rendering: auto;
+     text-rendering: initial;
     text-align: center;
     text-decoration: underline;
     border-color: limegreen;
-    border-style: solid;
-    background-attachment: fixed;
-    background: lightslategrey ;
-
+    border-style: solid 5px ;
+    /* background-attachment: fixed; */
+    /* background-image: url("./bemtlyWhiteBackGround1.jpg"); */
+    /* background-image: url("./collection-of-white-supercars.jpg"); */
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    background-position: center;
+    /* background-color: lightslategrey; */
+    /* opacity: 0.7; */
+      
 
 }
 
-
+.col-9{
+    background-color: lightslategray;
+    opacity: 0.9;
+    border: lime;
+    border-style: ridge;
+}
 /* .transbox{
 
         margin: auto;
