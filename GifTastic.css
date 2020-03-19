@@ -1,9 +1,7 @@
 body {
     background-image: url("./Grey&LimeAMG.jpg");
-
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-y: -200px;
 }
 
 .imagesDiv {
@@ -17,7 +15,7 @@ body {
     border-style: solid 5px;
     background-size: cover;
     background-position: center;
-   
+
 
 }
 
@@ -25,11 +23,15 @@ body {
     background-color: lightslategray;
     opacity: 0.9;
     border: lime;
-    border-style: ridge;
+    border-style: solid;
+    flex-basis: content;
 }
 
 .col-sm-3 {
     color: lime;
     font-size: larger;
     font-weight: bold;
+    float: right;
+    flex-basis: auto;
+    text-align: center;
 }
