@@ -7,6 +7,8 @@ var buttons = ["Bently", "Benz", "BMW", "Porche", "Audi", "Range Rover", "Lambo"
 
 
 
+
+
 // created a display function and 4 loop
 function display() {
 
@@ -31,9 +33,7 @@ function display() {
         //AJAX is a way to call API
         $.ajax({
             url: "https://api.giphy.com/v1/gifs/search?q=" + getTextBtn + "&api_key=DNSsuC2Sr861ml9NjnXxNjYmyA8iNUva&limit=10&offset=0&rating=G&lang=en",
-            // url:"https://api.giphy.com/v1/gifs/search?q=" + getTextBtn + "&api_key=DNSsuC2Sr861ml9NjnXxNjYmyA8iNUva&q=q&limit=10&offset=0&rating=G&lang=en",
-            // url: "https://api.giphy.com/v1/gifs/search?q=" + getTextBtn + "&api_key=DNSsuC2Sr861ml9NjnXxNjYmyA8iNUva&q=cars&limit=10&offset=0&rating=G&lang=en",
-            // url: "https://api.giphy.com/v1/gifs/search?q=" + getTextBtn + "&api_key=DNSsuC2Sr861ml9NjnXxNjYmyA8iNUva",
+
             method: "GET"
         }).then(function (response) {
             console.log(response);
@@ -54,13 +54,15 @@ function display() {
                 var col = $("<col-sm-3>");
 
                 var img = $("<img>");
+
                 img.attr("src", images[index].images.original_still.url);
-                img.attr("style", "width: 25%");
+                img.attr("style", "width: 33%");
                 img.attr("data-state", "still");
                 img.attr("data-still", images[index].images.original_still.url);
                 img.attr("data-animate", images[index].images.original.url);
                 img.addClass("imageButton");
                 col.append(img);
+                col.addClass("new-line")
 
                 col.append("Rating:" + images[index].rating);
                 row.append(col);

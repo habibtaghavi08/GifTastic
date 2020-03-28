@@ -2,7 +2,10 @@ body {
     background-image: url("./Grey&LimeAMG.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position-y: -50;
+
 }
+
 
 .imagesDiv {
     font-family: 'Arial Narrow Bold', sans-serif;
@@ -34,4 +37,8 @@ body {
     float: right;
     flex-basis: auto;
     text-align: center;
+}
+
+.new-line {
+    display: block;
 }
